@@ -1,16 +1,18 @@
-class ProgrammersController < ActionController::Base
+class ProgrammersController < ApplicationController
   #before_action :authenticate_user!
   #before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
-  def index #tbh i dunno if this is needed
-    #the question is: do i need to refer to anything on index?
-    @programmers = Programmer.all
+  def index
+    @programmers = Programmer.find_by(:user_id => current_user)
+    #@programmers.user_id
+
   end
   def new
     #@programmer = current_user.build_programmer
   end
   def create #create user: name & level
     @programmer = Programmer.new(programmer_params)
+
     @programmer.user_id = current_user.id
 
     if @programmer.save
@@ -23,7 +25,7 @@ class ProgrammersController < ActionController::Base
 
   end
   def show #this will show the user's profile
-
+    @programmers = Programmer.find_by(:user_id => current_user.id)
   end
   def edit #definitely allow users to edit their name and level
 
@@ -38,7 +40,7 @@ class ProgrammersController < ActionController::Base
 
   def programmer_params
      #params.require(:user).permit(programmer_attributes: [:name])
-     params.require(:programmer).permit(:name, :level)
+     params.require(:programmer).permit(:name, :level, :user_id)
   end
 
 end

@@ -4,11 +4,9 @@
     <%= form.text_field :name %>
   </p>
 
-  <p>
-    <%= form.label :level %><br>
-    <%= form.number_field :level %>
-  </p>
+    <%= form.label :programmer_levels %><br>
+    <%= form.select :programmer_levels, Programmer.programmer_levels.keys %>
 
-    <%= form.submit %>
+    <br><%= form.submit "Create" %>
   </p>
 <% end %>

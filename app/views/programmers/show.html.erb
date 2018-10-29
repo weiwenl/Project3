@@ -7,16 +7,16 @@
   <% if user_signed_in? %>
     <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
 
-    <%= @programmers.name %>
+      <%= @programmers.name %>
 
     <nav>
       <%= link_to 'Create Profile', new_programmer_path %>
       <%= link_to 'Edit Profile'%>
+      <%= link_to 'Show Profile', programmer_path%>
     </nav>
 
   <% end %>
 </nav>
 
-<nav>
-  <%= link_to 'New Post'%>
-</nav>
+<h2><%= @programmers.name %> 's Profile </h2>
+<h2>You are a <%= @programmers.level %></h2>

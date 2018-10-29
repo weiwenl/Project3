@@ -1,0 +1,25 @@
+<nav>
+  <%= link_to 'Home', controller: 'programmers' %> |
+  <%= link_to 'Forum' %> |
+  <%= link_to 'Chatbox' %> |
+  <%= link_to 'Members', new_user_session_url %>
+
+  <% if user_signed_in? %>
+    <%= current_user.id %>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+
+    <h2> User Profile </h2>
+
+
+
+    <nav>
+      <%= link_to 'Create Profile', new_programmer_path %>
+      <%= link_to 'Edit Profile'%>
+    </nav>
+
+  <% end %>
+</nav>
+
+<nav>
+  <%= link_to 'New Post'%>
+</nav>

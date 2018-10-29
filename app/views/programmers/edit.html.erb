@@ -1,0 +1,19 @@
+<%= form_for @profile do |f| %>
+     <%= f.hidden_field :user_id, current_user.id %>
+     <%= f.text_field :your_programmer_options %>
+<% end %>
+
+<%= form_with scope: :programmer, url: programmers_path, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :level %><br>
+    <%= form.integer :level %>
+  </p>
+
+    <%= form.submit %>
+  </p>
+<% end %>

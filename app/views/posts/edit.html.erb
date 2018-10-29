@@ -1,0 +1,13 @@
+<div class="container-fluid">
+	<h1>Edit comment</h1>
+	<%= form_with model: @post, url: programmer_post_path(@programmer), local: true do |form| %>
+		<p>
+				<%= form.label :content %><br/>
+				<%= form.text_area :content %>
+				<br/>
+				<%= form.submit %>
+		</p>
+	<% end %>
+
+	<%= link_to 'Back', programmer_post_path %>
+</div>

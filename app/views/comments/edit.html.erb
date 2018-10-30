@@ -1,0 +1,6 @@
+<%= form_with model: @comment, local: true do |form| %>
+  <p>
+    <%= form.text_area :commentContents %>
+  </p>
+   <%= form.submit %>
+<% end %>

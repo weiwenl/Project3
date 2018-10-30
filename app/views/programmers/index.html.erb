@@ -14,13 +14,10 @@
         <%= @programmers.name %>
         <%= link_to 'Edit Profile'%>
         <%= link_to 'Show Profile', programmer_path(@programmers) %>
+
+        <%= link_to 'New Post', new_programmer_post_path(@programmers)%>
       <% end %>
+<% end %>
 
 
-    <% end %>
-
-</nav>
-
-<nav>
-  <%= link_to 'New Post', new_programmer_post_path(@programmers)%>
 </nav>

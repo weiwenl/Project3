@@ -6,3 +6,25 @@
 <%= link_to 'Delete', programmer_post_path,
       method: :delete,
       data: { confirm: 'Are you sure?' } %>
+
+
+<%= form_with scope: :comment, url: comments_path, local: true do |form| %>
+	<%= form.hidden_field :post_id, :value => @post.id %>
+	<p>
+		<%= form.label :commentContents %>
+		<%= form.text_area :commentContents %>
+	</p>
+ 	<p>
+		<%= form.submit %>
+	</p>
+<% end %>
+
+ <% @comment.each do |comment| %>
+	<p><%= comment.commentContents %></p>
+<%= link_to 'Back', comments_path %>
+<%= link_to 'Edit', edit_comment_path(@comment) %>
+<% end %>
+
+
+
+

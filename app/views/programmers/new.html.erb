@@ -4,9 +4,10 @@
     <%= form.text_field :name %>
   </p>
 
-    <%= form.label :programmer_levels %><br>
-    <%= form.select :programmer_levels, Programmer.programmer_levels.keys %>
+    <%= form.label :level %>
+    <%= form.select(:level, options_for_select([['Rookie', 'Rookie'], ['Expert', 'Expert']]), :include_blank => true) %>
 
     <br><%= form.submit "Create" %>
   </p>
 <% end %>
+

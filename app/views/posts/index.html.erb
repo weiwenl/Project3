@@ -1,7 +1,9 @@
-<h1>List of posts</h1>
-<ol>
-	<% @post.each do |post| %>
-		<li><h4><%= post.post_title %></h4></li>
-		<p><%= post.content %></p>
-	<% end %>
-</ol>
+<div class="container-fluid">
+	<h1>List of posts</h1>
+	<ol>
+		<% @post.each do |post| %>
+			<li><h4><%= post.post_title %></h4></li>
+			<p><%= post.content %></p>
+		<% end %>
+	</ol>
+</div>

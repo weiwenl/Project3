@@ -7,22 +7,17 @@
   <% if user_signed_in? %>
     <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
 
-    <% if @programmers != nil %>
-      <%= @programmers.name %>
-    <% else %>
+    <% if @programmers.empty? %>
       <%= "Please create your profile" %>
-    <% end %>
+      <%= link_to 'Create Profile', new_programmer_path %>
+    <% else %>
+        <%= @programmers.name %>
+      <% end %>
 
-    <nav>
-      <% if @programmers == nil %>
-        <%= link_to 'Create Profile', new_programmer_path %>
-      <% else %>
       <%= link_to 'Edit Profile'%>
       <%= link_to 'Show Profile', programmer_path(@programmers) %>
-      <% end %>
-    </nav>
+    <% end %>
 
-  <% end %>
 </nav>
 
 <nav>

@@ -3,7 +3,7 @@ class ProgrammersController < ApplicationController
   #before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   def index
-    @programmers = Programmer.all
+    @programmers = Programmer.find_by(:user_id => current_user)
     #@programmers.user_id
 
   end

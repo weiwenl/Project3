@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+
+ <!-- <%= form.label :programmer_levels %><br>
+    <%= form.select :programmer_levels, Programmer.programmer_levels.keys %> -->
+

@@ -23,8 +23,13 @@ Things you may want to cover:
 
 * ...
 
+<% @comment.each do |comment| %>
+	<p><%= comment.commentContents %></p>
+<%= link_to 'Back', comments_path %>
+<%= link_to 'Edit', edit_comment_path(@comment) %>
+<% end %>
 
 
- <!-- <%= form.label :programmer_levels %><br>
-    <%= form.select :programmer_levels, Programmer.programmer_levels.keys %> -->
+
+ <
 

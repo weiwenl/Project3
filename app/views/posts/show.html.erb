@@ -2,27 +2,28 @@
 <h4>Post title: <strong><%= @post.post_title %></strong></h4>
 <%= @post.content %>
 
-<%= link_to 'Delete', programmer_post_path,
+<%= link_to 'Delete', post_path,
       method: :delete,
       data: { confirm: 'Are you sure?' } %>
 
 
-<%= form_with scope: :comment, url: comments_path, local: true do |form| %>
-	<%= form.hidden_field :post_id, :value => @post.id %>
+
+<%= form_with scope: :comment, url: post_comments_path(post_id: @post.id), local: true do |form| %>
 	<p>
 		<%= form.label :commentContents %>
 		<%= form.text_area :commentContents %>
 	</p>
+	<p>
+		<%= form.hidden_field :post_id, value: @post.id %>
+	</p>
+
  	<p>
 		<%= form.submit %>
 	</p>
 <% end %>
 
- <% @comment.each do |comment| %>
-	<p><%= comment.commentContents %></p>
-<%= link_to 'Back', comments_path %>
-<%= link_to 'Edit', edit_comment_path(@comment) %>
-<% end %>
+
+
 
 
 

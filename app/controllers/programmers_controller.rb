@@ -6,7 +6,6 @@ class ProgrammersController < ApplicationController
     #@programmers = Programmer.all
     @programmers = Programmer.find_by(:user_id => current_user)
     #@programmers.user_id
-
   end
   def new
 

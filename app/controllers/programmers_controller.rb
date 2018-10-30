@@ -3,17 +3,19 @@ class ProgrammersController < ApplicationController
   #before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   def index
+    #@programmers = Programmer.all
     @programmers = Programmer.find_by(:user_id => current_user)
     #@programmers.user_id
 
   end
   def new
-    #@programmer = current_user.build_programmer
+
   end
   def create #create user: name & level
     @programmer = Programmer.new(programmer_params)
-
+    #@programmers = Programmer.new(programmers_params)
     @programmer.user_id = current_user.id
+    #@programmers.user_id = current_user.id
 
     if @programmer.save
       redirect_to root_path

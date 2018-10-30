@@ -1,22 +1,3 @@
-<nav>
-  <%= link_to 'Home', root_path %> |
-  <%= link_to 'Forum' %> |
-  <%= link_to 'Chatbox' %> |
-  <%= link_to 'Members', new_user_session_url %>
-
-  <% if user_signed_in? %>
-    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-
-      <%= @programmers.name %>
-
-    <nav>
-      <%= link_to 'Create Profile', new_programmer_path %>
-      <%= link_to 'Edit Profile'%>
-      <%= link_to 'Show Profile', programmer_path%>
-    </nav>
-
-  <% end %>
-</nav>
-
 <h2><%= @programmers.name %> 's Profile </h2>
+<h2>Insert Profile Picture</h2>
 <h2>You are a <%= @programmers.level %></h2>

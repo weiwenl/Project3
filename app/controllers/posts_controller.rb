@@ -38,7 +38,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:content, :programmer_id)
+    params.require(:post).permit(:content, :programmer_id, :post_title)
   end
 
 end

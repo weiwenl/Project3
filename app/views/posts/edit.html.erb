@@ -2,10 +2,16 @@
 	<h1>Edit comment</h1>
 	<%= form_with model: @post, url: programmer_post_path(@programmer), local: true do |form| %>
 		<p>
+				<%= form.label :post_title %><br/>
+				<%= form.text_field :post_title %>
+		</p>
+		<p>
 				<%= form.label :content %><br/>
 				<%= form.text_area :content %>
-				<br/>
-				<%= form.submit %>
+		</p>
+		<p>
+			<br/>
+			<%= form.submit %>
 		</p>
 	<% end %>
 

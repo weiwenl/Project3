@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2018_10_30_024909) do
 
   create_table "programmers", force: :cascade do |t|
     t.string "name"
-    t.integer "level"
+    t.string "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2018_10_30_024909) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
+  
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "programmers"
   add_foreign_key "posts", "programmers"

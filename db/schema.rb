@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2018_10_30_024059) do
-
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,14 +29,13 @@ ActiveRecord::Schema.define(version: 2018_10_30_024059) do
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "post_title"
     t.bigint "programmer_id"
     t.index ["programmer_id"], name: "index_posts_on_programmer_id"
   end
 
   create_table "programmers", force: :cascade do |t|
     t.string "name"
-    t.integer "level"
+    t.string "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"

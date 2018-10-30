@@ -1,5 +1,7 @@
 <h1>Post #<%= @post.id %></h1>
+<h4>Post title: <strong><%= @post.post_title %></strong></h4>
 <%= @post.content %>
+<br/>
 
 <%= link_to 'Delete', programmer_post_path,
       method: :delete,

@@ -22,11 +22,17 @@
 	  		</form>
 	  	<% else %>
 	  	  <form class="form-inline">
-	 				<%= link_to 'Forum', programmer_posts_path(current_user.id), html_options={disabled: false}%> |
-	 				<%= link_to 'Chatbox' %> |
+	 				<%= link_to 'Forum', programmer_posts_path(current_user.id), html_options={disabled: false}%>
+	 				<div style="padding-left: 30px;">
+	 					<%= link_to 'Chatbox' %>
+	 				</div>
+	 				<div style="padding-left: 30px;">
+	 					<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+	 				</div>
 		  	</form>
 	  	<% end %>
   	</nav>
+
 		<p class="notice" style="display:none;"><%= notice %></p>
     <p class="alert" style="display:none;"><%= alert %></p>
     <%= yield %>

@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dgwida4t5
+  api_key: '279124794935296'
+  api_secret: 0GRf6Ykq8LUt3rGBofO0H-meXVU
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dgwida4t5
+  api_key: '279124794935296'
+  api_secret: 0GRf6Ykq8LUt3rGBofO0H-meXVU
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dgwida4t5
+  api_key: '279124794935296'
+  api_secret: 0GRf6Ykq8LUt3rGBofO0H-meXVU
+  enhance_image_tag: true
+  static_image_support: false

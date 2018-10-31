@@ -1,6 +1,6 @@
 <div class="container-fluid">
 	<h1> Create new post</h1>
-	<%= form_with scope: :post, url: programmer_posts_path, local: true do |form| %>
+	<%= form_with scope: :post, url: posts_path, local: true do |form| %>
 		<p>
 			<%= form.label :post_title %><br>
 			<%= form.text_field :post_title %>
@@ -10,9 +10,7 @@
 			<%= form.label :content %><br>
 			<%= form.text_area :content %>
 		</p>
-
 		<p>
-			<%= form.hidden_field :programmer_id, value:@programmer.id %><br/>
 			<%= form.submit %>
 		</p>
 	<% end %>

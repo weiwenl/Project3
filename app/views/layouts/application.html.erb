@@ -4,8 +4,6 @@
     <title>Project3</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -23,7 +21,7 @@
 	  		</form>
 	  	<% else %>
 	  	  <form class="form-inline">
-	 				<%= link_to 'Forum', programmer_posts_path(current_user.id), html_options={disabled: false}%>
+	 				<%= link_to 'Forum', posts_path, html_options={disabled: false}%>
 	 				<div style="padding-left: 30px;">
 	 					<%= link_to 'Chatbox' %>
 	 				</div>

@@ -4,8 +4,7 @@
     <title>Project3</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -16,18 +15,20 @@
   	  <a class="navbar-brand" href="/">StackBananaFlow</a>
   	  <% if !user_signed_in? %>
 	  	  <form class="form-inline">
-	  	    <a class="btn btn-outline-primary" href="/users/sign_in" role="button">
-	  	    Login
-	  	    </a>
-	  	    <div style="padding-left: 10px;">
-	  	      <a class="btn btn-outline-success" href="/users/sign_up" role="button">
-	  	      Sign Up
-	  	      </a>
-	  	    </div>
-	  	  </form>
+	  			  <a class="btn btn-outline-primary" href="/users/sign_in" role="button">Login</a>
+	  			  <div style="padding-left: 10px;">
+	  			    <a class="btn btn-outline-success" href="/users/sign_up" role="button">Sign Up</a>
+	  			  </div>
+	  		</form>
+	  	<% else %>
+	  	  <form class="form-inline">
+	 				<%= link_to 'Forum', programmer_posts_path(current_user.id), html_options={disabled: false}%> |
+	 				<%= link_to 'Chatbox' %> |
+		  	</form>
 	  	<% end %>
   	</nav>
-
+		<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

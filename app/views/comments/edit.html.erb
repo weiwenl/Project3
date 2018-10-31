@@ -2,17 +2,17 @@
 	<div class="row">
 		<div class="col-sm-6 ml-3 mt-3">
 
-		<%= form_with model: @comment, url: post_comments_path,local: true do |form| %>
+		<%= form_with model: @comment, url: post_comments_path, local: true do |form| %>
 
 		<p>
 
 			<br>
-			<%= form.label :Edit_Comments %>
+			<b><%= form.label :Edit_your_comments_below %>:</b>
 			<br>
 			<%= form.text_area :commentContents %>
 		</p>
 	 	<p>
-			<%= form.submit %>
+			<%= form.submit :class => "btn btn-info"%>
 		</p>
 		<% end %>
 

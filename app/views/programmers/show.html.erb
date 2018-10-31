@@ -1,6 +1,13 @@
-<h2><%= @programmers.name %> 's Profile </h2>
-<h2>Insert Profile Picture</h2>
-<%= cl_image_tag(@programmers.photo_url, :width => 300, :height => 300) %>
-<h2>Photo URL</h2>
-<%= @programmers.photo_url %>
-<h2><%= @programmers.level %></h2>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-6 ml-3 mt-3">
+        <%= link_to 'back', root_path %>
+        <div class="">
+          <strong>My Profile</strong><br>
+          <%= @programmer.name %><br>
+          <%= cl_image_tag(@programmer.photo_url, :width => 300, :height => 300) %><br>
+          <%= @programmer.level %>
+        </div>
+    </div>
+  </div>
+</div>

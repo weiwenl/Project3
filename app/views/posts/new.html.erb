@@ -1,17 +1,21 @@
 <div class="container-fluid">
-	<h1> Create new post</h1>
-	<%= form_with scope: :post, url: posts_path, local: true do |form| %>
-		<p>
-			<%= form.label :post_title %><br>
-			<%= form.text_field :post_title %>
-		</p>
+	<div class="row">
+		<div class="col-sm-6 ml-3 mt-3">
+			<h1> Create new post</h1>
+			<%= form_with scope: :post, url: posts_path, local: true do |form| %>
+				<p>
+					<%= form.label :post_title %><br>
+					<%= form.text_field :post_title %>
+				</p>
 
-		<p>
-			<%= form.label :content %><br>
-			<%= form.text_area :content %>
-		</p>
-		<p>
-			<%= form.submit %>
-		</p>
-	<% end %>
+				<p>
+					<%= form.label :content %><br>
+					<%= form.text_area :content %>
+				</p>
+				<p>
+					<%= form.submit :class => "btn btn-info"%>
+				</p>
+			<% end %>
+		</div>
+	</div>
 </div>

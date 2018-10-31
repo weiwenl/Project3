@@ -1,9 +1,16 @@
 <div class="container-fluid">
-	<h1>List of posts</h1>
-	<ol>
-		<% @post.each do |post| %>
-			<li><h4><%= post.post_title %></h4></li>
-			<p><%= post.content %></p>
-		<% end %>
-	</ol>
+	<div class="row">
+		<div class="col-sm-6 ml-3 mt-3">
+			<h1>List of posts</h1>
+			<ol>
+				<% @post.each do |post| %>
+					<li>
+						<%= link_to post.post_title, post_path(post.id)%></li>
+					<p><%= post.content %></p>
+				<% end %>
+			</ol>
+
+			<a class="btn btn-primary" href="/posts/new">Create new post</a>
+		</div>
+	</div>
 </div>

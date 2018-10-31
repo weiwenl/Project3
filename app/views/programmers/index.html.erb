@@ -10,11 +10,12 @@
                   <%= @programmer.name %>
                   <%= link_to 'Edit Profile', edit_programmer_path(@programmer) %>
                   <%= link_to 'Show Profile', programmer_path(@programmer) %>
-
                   <%= link_to 'New Post', new_post_path%>
+                  <%= link_to 'Show Posts', posts_path %>
                 <% end %>
           <% end %>
         </nav>
     </div>
   </div>
 </div>
+

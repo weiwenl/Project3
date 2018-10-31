@@ -1,11 +1,6 @@
 <nav>
-  <%= link_to 'Home', root_path %> |
-  <%= link_to 'Forum' %> |
-  <%= link_to 'Chatbox' %> |
-  <%= link_to 'Members', new_user_session_url %>
 
   <% if user_signed_in? %>
-    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
 
     <% if @programmers == nil %>
       <%= "Please create your profile" %>

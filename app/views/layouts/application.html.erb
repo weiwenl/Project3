@@ -10,8 +10,8 @@
   </head>
 
   <body>
-  	<nav class="navbar navbar-light bg-light">
-  		<a class="navbar-brand" href="/"><img src="/images/banana.png" width="35" height="35" class="d-inline-block align-top" alt="">StackBananaFlow</a>
+  	<nav class="navbar navbar-light bg-dark">
+  		<a class="navbar-brand" href="/"><img src="/images/banana.png" style="border-radius: 10px" width="35" height="35" class="d-inline-block align-top" alt=""><span style="color:#ffed7a; padding-left: 10px;">StackBananaFlow</a>
   	  <% if !user_signed_in? %>
 	  	  <form class="form-inline">
 	  			  <a class="btn btn-outline-primary" href="/users/sign_in" role="button">Login</a>
@@ -21,7 +21,7 @@
 	  		</form>
 	  	<% else %>
 	  	  <form class="form-inline">
-	 				<%= link_to 'Forum', posts_path, html_options={disabled: false}%>
+	 				<%= link_to 'Forum', posts_path %>
 	 				<div style="padding-left: 30px;">
 	 					<%= link_to 'Chatbox' %>
 	 				</div>
@@ -29,6 +29,7 @@
 	 					<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
 	 				</div>
 		  	</form>
+
 	  	<% end %>
   	</nav>
 

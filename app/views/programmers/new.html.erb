@@ -1,14 +1,20 @@
-<%= form_with scope: :programmer, url: programmers_path, local: true do |form| %>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-6 ml-3 mt-3">
+        <%= form_with scope: :programmer, url: programmers_path, local: true do |form| %>
 
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+            <%= form.label :name %>
+            <%= form.text_field :name %>
 
 
-    <%= form.label :level %>
-    <%= form.select(:level, options_for_select([['Rookie', 'Rookie'], ['Expert', 'Expert']]), :include_blank => true) %>
+            <%= form.label :level %>
+            <%= form.select(:level, options_for_select([['Rookie', 'Rookie'], ['Expert', 'Expert']]), :include_blank => true) %>
 
-    <%= form.label :photo_url %>
-    <%= form.file_field :photo_url %>
-    <%= form.submit "Create" %>
+            <%= form.label :photo_url %>
+            <%= form.file_field :photo_url %>
+            <%= form.submit "Create" %>
 
-<% end %>
+        <% end %>
+    </div>
+  </div>
+</div>

@@ -1,23 +1,27 @@
-<nav>
-  <%= link_to 'Home', root_path %> |
-  <%= link_to 'Forum' %> |
-  <%= link_to 'Chatbox' %> |
-  <%= link_to 'Members', new_user_session_url %>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-6 ml-3 mt-3">
+        <nav>
+          <%= link_to 'Home', root_path %> |
+          <%= link_to 'Forum' %> |
+          <%= link_to 'Chatbox' %> |
+          <%= link_to 'Members', new_user_session_url %>
 
-  <% if user_signed_in? %>
-    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+          <% if user_signed_in? %>
+            <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
 
-    <% if @programmer == nil %>
-      <%= "Please create your profile" %>
-      <%= link_to 'Create Profile', new_programmer_path %>
-    <% else %>
-        <%= @programmer.name %>
-        <%= link_to 'Edit Profile', edit_programmer_path(@programmer) %>
-        <%= link_to 'Show Profile', programmer_path(@programmer) %>
+            <% if @programmer == nil %>
+              <%= "Please create your profile" %>
+              <%= link_to 'Create Profile', new_programmer_path %>
+            <% else %>
+                <%= @programmer.name %>
+                <%= link_to 'Edit Profile', edit_programmer_path(@programmer) %>
+                <%= link_to 'Show Profile', programmer_path(@programmer) %>
 
-        <%= link_to 'New Post', new_post_path%>
-      <% end %>
-<% end %>
-
-
-</nav>
+                <%= link_to 'New Post', new_post_path%>
+              <% end %>
+        <% end %>
+        </nav>
+    </div>
+  </div>
+</div>

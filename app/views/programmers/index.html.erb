@@ -1,19 +1,21 @@
-<nav>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-6 ml-3 mt-3">
+        <nav>
+          <% if user_signed_in? %>
+              <% if @programmer == nil %>
+                <%= "Please create your profile" %>
+                <%= link_to 'Create Profile', new_programmer_path %>
+              <% else %>
+                  <%= @programmer.name %>
+                  <%= link_to 'Edit Profile', edit_programmer_path(@programmer) %>
+                  <%= link_to 'Show Profile', programmer_path(@programmer) %>
+                  <%= link_to 'New Post', new_post_path%>
+                  <%= link_to 'Show Posts', posts_path %>
+                <% end %>
+          <% end %>
+        </nav>
+    </div>
+  </div>
+</div>
 
-  <% if user_signed_in? %>
-
-    <% if @programmers == nil %>
-      <%= "Please create your profile" %>
-      <%= link_to 'Create Profile', new_programmer_path %>
-    <% else %>
-        <%= @programmers.name %>
-        <%= link_to 'Edit Profile'%>
-        <%= link_to 'Show Profile', programmer_path(@programmers) %>
-
-        <%= link_to 'New Post', new_post_path%>
-        <%= link_to 'Show Posts', posts_path %>
-      <% end %>
-<% end %>
-
-
-</nav>

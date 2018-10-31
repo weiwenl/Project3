@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.save
     @programmer = Programmer.find(params[:programmer_id].to_i)
-    redirect_to root_path
+    redirect_to programmer_posts_path
   end
 
   def update

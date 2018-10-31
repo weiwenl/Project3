@@ -20,9 +20,7 @@ ActiveRecord::Schema.define(version: 2018_10_31_015751) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "post_id"
-    t.bigint "programmer_id"
     t.index ["post_id"], name: "index_comments_on_post_id"
-    t.index ["programmer_id"], name: "index_comments_on_programmer_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -57,7 +55,6 @@ ActiveRecord::Schema.define(version: 2018_10_31_015751) do
   end
 
   add_foreign_key "comments", "posts"
-  add_foreign_key "comments", "programmers"
   add_foreign_key "posts", "programmers"
   add_foreign_key "programmers", "users"
 end

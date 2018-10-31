@@ -14,8 +14,8 @@
 	<p> <b>Comments:</b> </p>
 	<% @comments.each do |comment| %>
 		<p><%= comment.commentContents %>
-		<%= link_to 'Edit',  edit_post_comment_path(@comments) %>
-		<%= link_to 'Delete', post_path,
+		<%= link_to 'Edit',  edit_post_comment_path(@comments), :class => "btn btn-info"%>
+		<%= link_to 'Delete', post_path, :class => "btn btn-info",
 	      method: :delete,
 	      data: { confirm: 'Are you sure?' } %>
 	    </p>
@@ -36,7 +36,7 @@
 		</p>
 	<% end %>
 
-	<%= link_to 'Back', posts_path %>
+	<%= link_to 'Back', posts_path,  :class => "btn btn-info" %>
 
 		</div>
 	</div>

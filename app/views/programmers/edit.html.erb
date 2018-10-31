@@ -1,19 +1,14 @@
-<%= form_for @profile do |f| %>
-     <%= f.hidden_field :user_id, current_user.id %>
-     <%= f.text_field :your_programmer_options %>
-<% end %>
-
-<%= form_with scope: :programmer, url: programmers_path, local: true do |form| %>
-  <p>
-    <%= form.label :name %><br>
+<%= form_with model: @programmer, url: programmer_path(@programmer), method: "patch", local: true do |form| %>
+    <%= form.hidden_field :id, value:@programmer.id %>
+    <%= form.label :name %>
     <%= form.text_field :name %>
-  </p>
 
-  <p>
-    <%= form.label :level %><br>
-    <%= form.integer :level %>
-  </p>
 
-    <%= form.submit %>
-  </p>
+    <%= form.label :level %>
+    <%= form.select(:level, options_for_select([['Rookie', 'Rookie'], ['Expert', 'Expert']]), :include_blank => true) %>
+
+    <%= form.label :photo_url %>
+    <%= form.file_field :photo_url %>
+    <%= form.submit "Save" %>
+
 <% end %>

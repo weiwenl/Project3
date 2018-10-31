@@ -7,13 +7,13 @@
   <% if user_signed_in? %>
     <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
 
-    <% if @programmers == nil %>
+    <% if @programmer == nil %>
       <%= "Please create your profile" %>
       <%= link_to 'Create Profile', new_programmer_path %>
     <% else %>
-        <%= @programmers.name %>
-        <%= link_to 'Edit Profile'%>
-        <%= link_to 'Show Profile', programmer_path(@programmers) %>
+        <%= @programmer.name %>
+        <%= link_to 'Edit Profile', edit_programmer_path(@programmer) %>
+        <%= link_to 'Show Profile', programmer_path(@programmer) %>
 
         <%= link_to 'New Post', new_post_path%>
       <% end %>

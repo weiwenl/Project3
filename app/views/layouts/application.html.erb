@@ -21,7 +21,15 @@
 	  		</form>
 	  	<% else %>
 	  	  <form class="form-inline">
-	 				<%= link_to 'Forum', posts_path %>
+	  	  		<% if @programmer == nil  %>
+	 							<%= link_to 'My Profile', new_programmer_path  %>
+	 					<% else %>
+	 							<%= link_to 'My Profile', programmer_path(current_user.programmer.id) %>
+	 					<% end %>
+
+	  	  	<div style="padding-left: 30px;">
+	 					<%= link_to 'Forum', posts_path %>
+	 				</div>
 	 				<div style="padding-left: 30px;">
 	 					<%= link_to 'Chatbox' %>
 	 				</div>

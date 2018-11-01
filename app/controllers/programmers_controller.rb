@@ -8,10 +8,10 @@ class ProgrammersController < ApplicationController
   end
 
   def create
-      # uploaded_file = params[:programmer][:photo_url].path
-      # cloudnary_file = Cloudinary::Uploader.upload(uploaded_file)
+      uploaded_file = params[:programmer][:photo_url].path
+      cloudnary_file = Cloudinary::Uploader.upload(uploaded_file)
 
-      # params[:programmer][:photo_url] = cloudnary_file['public_id']
+      params[:programmer][:photo_url] = cloudnary_file['public_id']
       @programmer = Programmer.new(programmer_params)
       @programmer.user_id = current_user.id
 

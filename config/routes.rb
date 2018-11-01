@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :programmers
 
+
   resources :posts do
     resources :comments
   end

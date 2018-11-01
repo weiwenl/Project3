@@ -29,9 +29,9 @@ class CommentsController < ApplicationController
 
    def update
     @comment = Comment.find(params[:id])
-    @post = Post.find(params[:post_id].to_i)
-    @comment.post_id = @post.id
-    @comment.update(post_params)
+    # @post = Post.find(params[:post_id].to_i)
+    # @comment.post_id = @post.id
+    @comment.update(comment_params)
     redirect_to posts_path
     # @comment = Comment.find(params[:id])
     # @post = Post.find(@comment['post_id'])

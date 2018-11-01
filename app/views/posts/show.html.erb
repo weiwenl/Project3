@@ -14,8 +14,8 @@
 	<p> <b>Comments:</b> </p>
 	<% @comments.each do |comment| %>
 		<p><%= comment.commentContents %>
-		<%= link_to 'Edit',  edit_post_comment_path(@comments), :class => "btn btn-info"%>
-		<%= link_to 'Delete', post_path, :class => "btn btn-info",
+		<%= link_to 'Edit',  edit_post_comment_path(post_id: @post.id, id: comment), :class => "btn btn-info"%>
+		<%= link_to 'Delete', post_comment_path(post_id: @post.id, id: comment), :class => "btn btn-info",
 	      method: :delete,
 	      data: { confirm: 'Are you sure?' } %>
 	    </p>

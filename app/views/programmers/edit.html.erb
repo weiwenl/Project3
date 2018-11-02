@@ -3,7 +3,7 @@
 		<div class="col-sm-6 ml-3 mt-3">
 
 			<div class="row	mt-3">
-			<h3>Make changes to my profile</h3>
+			<h3>Update my profile</h3>
 
 					<%= form_with model: @programmer, url: programmer_path(@programmer), method: "patch", local: true do |form| %>
 							<%= form.hidden_field :id, value:@programmer.id %>
@@ -19,13 +19,9 @@
 	            <%= form.file_field :photo_url %><br>
 
 									<%= form.submit "Save" %>
-							
+
 	        <% end %>
-
-
-
 		</div>
-
     </div>
   </div>
 </div>

@@ -14,11 +14,11 @@
 	<p> <b>Comments:</b> </p>
 	<% @comments.each do |comment| %>
 		<p><%= comment.commentContents %>
-		<%= link_to 'Edit',  edit_post_comment_path(post_id: @post.id, id: comment), :class => "btn btn-info"%>
-		<%= link_to 'Delete', post_comment_path(post_id: @post.id, id: comment), :class => "btn btn-info",
-	      method: :delete,
-	      data: { confirm: 'Are you sure?' } %>
-	    </p>
+			<%= link_to 'Edit',  edit_post_comment_path(post_id: @post.id, id: comment), :class => "btn btn-info"%>
+			<%= link_to 'Delete', post_comment_path(post_id: @post.id, id: comment), :class => "btn btn-info",
+		      method: :delete,
+		      data: { confirm: 'Are you sure?' } %>
+	  </p>
 	<% end %>
 
 	<%= form_with scope: :comment, url: programmer_post_comments_path(programmer_id: @programmer.id, post_id: @post.id), local: true do |form| %>

@@ -10,13 +10,11 @@ class CommentsController < ApplicationController
     @programmer = Programmer.find(params[:programmer_id].to_i)
     @comment.post_id = @post.id
     @comment.programmer_id = @programmer.id
-    @comment.save
-    redirect_to posts_path
-    # if @comment.save
-    #   redirect_to root_path
-    # else
-    #   render plain: "heyyou"
-    # end
+    if @comment.save
+      redirect_to post_path(@comment.post_id)
+    else
+      redirect_to posts_path
+    end
   end
 
    def edit

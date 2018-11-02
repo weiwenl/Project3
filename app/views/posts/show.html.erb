@@ -1,3 +1,5 @@
+<%= link_to 'Back', posts_path %>
+
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-6 ml-3 mt-3">
@@ -15,11 +17,13 @@
 	<p> <b>Comments:</b> </p>
 	<% @comments.each do |comment| %>
 		<p><%= comment.commentContents %>
-			<%= link_to 'Edit',  edit_post_comment_path(post_id: @post.id, id: comment), :class => "btn btn-info"%>
-			<%= link_to 'Delete', post_comment_path(post_id: @post.id, id: comment), :class => "btn btn-info",
+			<%= link_to 'Edit',  edit_post_comment_path(post_id: @post.id, id: comment), :class => "btn btn-outline-info btn-sm" %>
+			<%= link_to 'Delete', post_comment_path(post_id: @post.id, id: comment), :class => "btn btn-outline-info btn-sm",
 		      method: :delete,
 		      data: { confirm: 'Are you sure?' } %>
-	  </p>
+		<br>
+		    <%=link_to @programmer.name, programmer_path(@programmer.id), :style =>"color: #ff82f4" %><br/>
+	    </p>
 	<% end %>
 
 	<%= form_with scope: :comment, url: programmer_post_comments_path(programmer_id: @programmer.id, post_id: @post.id), local: true do |form| %>
@@ -34,11 +38,9 @@
 			<%= form.hidden_field :post_id, value: @programmer.id %>
 		</p>
 	 	<p>
-			<%= form.submit :class => "btn btn-info"%>
+	 		<%= form.submit :class => "btn btn-info"%>
 		</p>
 	<% end %>
-
-	<%= link_to 'Back', posts_path,  :class => "btn btn-info" %>
 
 		</div>
 	</div>

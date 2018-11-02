@@ -2,7 +2,9 @@
 	<div class="row">
 		<div class="col-sm-6 ml-3 mt-3">
 			<h1> Create new post</h1>
-			<%= form_with scope: :post, url: posts_path, local: true do |form| %>
+			<%= form_with scope: :post, url: programmer_post_path(programmer_id: @programmer.id), local: true do |form| %>
+
+
 				<p>
 					<%= form.label :post_title %><br>
 					<%= form.text_field :post_title %>

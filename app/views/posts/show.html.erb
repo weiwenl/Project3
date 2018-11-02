@@ -3,6 +3,7 @@
 		<div class="col-sm-6 ml-3 mt-3">
 			<h4>Post title: <strong><%= @post.post_title%></strong></h4><hr/>
 			<%= @post.content %><br/>
+			<%= @programmer.name %>
 			<%= link_to 'Edit', edit_post_path, :class => "btn btn-info"%>
 			<%= link_to 'Delete', post_path, :class => "btn btn-info",
 			      method: :delete,
@@ -41,4 +42,3 @@
 		</div>
 	</div>
 </div>
-

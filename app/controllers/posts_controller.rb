@@ -4,11 +4,13 @@ class PostsController < ApplicationController
   end
 
   def show
+    @programmer = Programmer.find(current_user.programmer.id)
     @post = Post.find(params[:id])
     @comments = Comment.where(post_id: params[:id])
   end
 
   def new
+
   end
 
   def edit
@@ -16,9 +18,14 @@ class PostsController < ApplicationController
   end
 
   def create
+    @programmer = Programmer.find(current_user.programmer.id)
     @post = Post.new(post_params)
-    @post.save
+
+    if @post.save
     redirect_to posts_path
+    else
+      render 'new'
+    end
   end
 
   def update
@@ -36,7 +43,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:content, :post_title)
+    params.require(:post).permit(:content, :post_title, :programmer_id)
   end
 
 end

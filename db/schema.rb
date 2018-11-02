@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(version: 2018_11_02_064945) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-
   create_table "votes", id: :serial, force: :cascade do |t|
     t.string "votable_type"
     t.integer "votable_id"
@@ -70,7 +69,6 @@ ActiveRecord::Schema.define(version: 2018_11_02_064945) do
     t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
   end
-
 
   add_foreign_key "comments", "posts"
   add_foreign_key "posts", "programmers"

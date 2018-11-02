@@ -11,5 +11,19 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :posts do
+    member do
+      put "like", to: "posts#upvote"
+      put "dislike", to: "posts#downvote"
+    end
+  end
+
+  # resources :links do
+  #   member do
+  #     put "like", to: "links#upvote"
+  #     put "dislike", to: "links#downvote"
+  #   end
+  # end
+
   root to: "programmers#index"
 end

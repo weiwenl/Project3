@@ -4,9 +4,10 @@
 			<h1>List of posts</h1>
 			<ol>
 				<% @post.each do |post| %>
-					<li>
-						<%= link_to post.post_title, post_path(post.id)%></li>
+					<li><h3>
+						<%= link_to post.post_title, post_path(post.id)%></h3></li>
 					<p><%= post.content %></p>
+					<p class="name-footer"><%=link_to @programmer.name, programmer_path(@programmer.id), :style =>"color: #ff82f4" %></p>
 				<% end %>
 			</ol>
       <%= link_to 'Create New Post', new_programmer_post_path(programmer_id: @programmer.id), :class => "btn btn-info"%>

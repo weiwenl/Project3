@@ -21,13 +21,13 @@
 	  		</form>
 	  	<% else %>
 	  	  <form class="form-inline">
+          <div style="padding-left: 30px;">
 	  	  		<% if current_user.programmer != nil  %>
                 <%= link_to 'My Profile', programmer_path(current_user.programmer.id) %>
-                <%= link_to 'My Post',  programmer_posts_path(current_user.programmer.id) %>
 	 					<% else %>
 	 							<%= link_to 'My Profile', new_programmer_path  %>
 	 					<% end %>
-
+          </div>
 	  	  	<div style="padding-left: 30px;">
 	 					<%= link_to 'All posts', posts_path %>
 	 				</div>

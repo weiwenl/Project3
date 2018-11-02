@@ -46,14 +46,16 @@ class PostsController < ApplicationController
   end
 
   def upvote
+    @programmer = Programmer.find(current_user.programmer.id)
     @post = Post.find(params[:id])
-    @post.upvote_by current_user
+    @post.upvote_by @programmer
     redirect_to posts_path
   end
 
   def downvote
+    @programmer = Programmer.find(current_user.programmer.id)
     @post = Post.find(params[:id])
-    @post.downvote_by current_user
+    @post.downvote_by @programmer
     redirect_to posts_path
   end
 

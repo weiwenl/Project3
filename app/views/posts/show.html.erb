@@ -3,6 +3,7 @@
 		<div class="col-sm-6 ml-3 mt-3">
 			<h4>Post title: <strong><%= @post.post_title%></strong></h4><hr/>
 			<%= @post.content %><br/>
+			<%=link_to @programmer.name, programmer_path(@programmer.id), :style =>"color: #ff82f4" %><br/>
 			<%= link_to 'Edit', edit_programmer_post_path(@programmer), :class => "btn btn-info"%>
 			<%= link_to 'Delete', programmer_post_path(@programmer), :class => "btn btn-info",
 			      method: :delete,

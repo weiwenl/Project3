@@ -1,13 +1,35 @@
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-sm-6 ml-3 mt-3">
-        <%= link_to 'back', root_path %>
-        <div class="">
-          <strong>My Profile</strong><br>
-          <%= @programmer.name %><br>
-          <%= cl_image_tag(@programmer.photo_url, :width => 300, :height => 300) %><br>
-          <%= @programmer.level %>
-        </div>
-    </div>
-  </div>
+<%= stylesheet_link_tag "main_style" %>
+<%= link_to 'back', root_path %>
+
+<div class="container">
+		<div class="row	mt-3">
+					<div class="col-sm-6" style="height:100%; width:100%; overflow:hidden">
+							<h1>My Profile</h1>
+							<div class="card">
+									<%= cl_image_tag(@programmer.photo_url, :width => 300, :height => 300) %>
+  								<div class="card-body">
+    							<h5 class="card-title"><span>I am </span><span><%= @programmer.name %></span></h5>
+    							<p class="card-text"><span>Status: </span><span><%= @programmer.level %></span></p>
+  								</div>
+							</div>
+
+
+
+							<div class="row	mt-3">
+
+							</div>
+							<h3><%= link_to 'Edit Profile', edit_programmer_path(@programmer) %></h3>
+					</div>
+
+					<div class="col-sm-6">
+								<h1>My Post</h1>
+								<ol>
+									<% @posts.each do |post| %>
+										<li>
+											<%= link_to post.post_title, post_path(post.id)%></li>
+										<p><%= post.content %></p>
+									<% end %>
+								</ol>
+	  	    </div>
+		</div>
 </div>

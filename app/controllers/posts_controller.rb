@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @post = Post.all
+    @programmer = Programmer.find(current_user.programmer.id)
   end
 
   def show

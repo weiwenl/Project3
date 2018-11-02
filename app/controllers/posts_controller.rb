@@ -15,6 +15,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @programmer = Programmer.find(params[:programmer_id])
   end
 
   def create

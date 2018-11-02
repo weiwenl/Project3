@@ -37,6 +37,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    @programmer = Programmer.find(params[:programmer_id])
     @post.destroy
 
     redirect_to root_path

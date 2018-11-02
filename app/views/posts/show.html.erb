@@ -4,7 +4,7 @@
 			<h4>Post title: <strong><%= @post.post_title%></strong></h4><hr/>
 			<%= @post.content %><br/>
 			<%= link_to 'Edit', edit_programmer_post_path(@programmer), :class => "btn btn-info"%>
-			<%= link_to 'Delete', post_path, :class => "btn btn-info",
+			<%= link_to 'Delete', programmer_post_path(@programmer), :class => "btn btn-info",
 			      method: :delete,
 			      data: { confirm: 'Are you sure?' } %>
 

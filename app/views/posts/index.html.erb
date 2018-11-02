@@ -9,8 +9,7 @@
 					<p><%= post.content %></p>
 				<% end %>
 			</ol>
-
-			<a class="btn btn-primary" href="/posts/new">Create new post</a>
+      <%= link_to 'Create New Post', new_programmer_post_path(programmer_id: @programmer.id), :class => "btn btn-info"%>
 		</div>
 	</div>
 </div>

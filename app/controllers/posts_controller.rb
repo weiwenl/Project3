@@ -1,24 +1,33 @@
 class PostsController < ApplicationController
   def index
     @post = Post.all
+    @programmer = Programmer.find(current_user.programmer.id)
   end
 
   def show
+    @programmer = Programmer.find(current_user.programmer.id)
     @post = Post.find(params[:id])
     @comments = Comment.where(post_id: params[:id])
   end
 
   def new
+    @programmer = Programmer.find(params[:programmer_id])
   end
 
   def edit
     @post = Post.find(params[:id])
+    @programmer = Programmer.find(params[:programmer_id])
   end
 
   def create
+    @programmer = Programmer.find(current_user.programmer.id)
     @post = Post.new(post_params)
-    @post.save
+
+    if @post.save
     redirect_to posts_path
+    else
+      render 'new'
+    end
   end
 
   def update
@@ -29,6 +38,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    @programmer = Programmer.find(params[:programmer_id])
     @post.destroy
 
     redirect_to root_path
@@ -36,7 +46,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:content, :post_title)
+    params.require(:post).permit(:content, :post_title, :programmer_id)
   end
 
 end

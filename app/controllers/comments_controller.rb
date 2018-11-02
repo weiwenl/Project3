@@ -7,14 +7,14 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @post = Post.find(params[:post_id].to_i)
+    @programmer = Programmer.find(params[:programmer_id].to_i)
     @comment.post_id = @post.id
-    @comment.save
-    redirect_to posts_path
-    # if @comment.save
-    #   redirect_to root_path
-    # else
-    #   render plain: "heyyou"
-    # end
+    @comment.programmer_id = @programmer.id
+    if @comment.save
+      redirect_to post_path(@comment.post_id)
+    else
+      redirect_to posts_path
+    end
   end
 
    def edit
@@ -49,8 +49,8 @@ class CommentsController < ApplicationController
   end
 
    private
-   def comment_params
-    params.require(:comment).permit(:commentContents, :post_id)
+  def comment_params
+    params.require(:comment).permit(:commentContents, :post_id, :programmer_id)
   end
 
 end

@@ -21,7 +21,7 @@
 	    </p>
 	<% end %>
 
-	<%= form_with scope: :comment, url: post_comments_path(post_id: @post.id), local: true do |form| %>
+	<%= form_with scope: :comment, url: programmer_post_comments_path(programmer_id: @programmer.id, post_id: @post.id), local: true do |form| %>
 		<p>
 			<br>
 			<b><%= form.label :Add_new_comments_below %>:</b>
@@ -30,6 +30,7 @@
 		</p>
 		<p>
 			<%= form.hidden_field :post_id, value: @post.id %>
+			<%= form.hidden_field :post_id, value: @programmer.id %>
 		</p>
 	 	<p>
 			<%= form.submit :class => "btn btn-info"%>

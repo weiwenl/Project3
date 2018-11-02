@@ -7,7 +7,9 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @post = Post.find(params[:post_id].to_i)
+    @programmer = Programmer.find(params[:programmer_id].to_i)
     @comment.post_id = @post.id
+    @comment.programmer_id = @programmer.id
     @comment.save
     redirect_to posts_path
     # if @comment.save
@@ -49,8 +51,8 @@ class CommentsController < ApplicationController
   end
 
    private
-   def comment_params
-    params.require(:comment).permit(:commentContents, :post_id)
+  def comment_params
+    params.require(:comment).permit(:commentContents, :post_id, :programmer_id)
   end
 
 end

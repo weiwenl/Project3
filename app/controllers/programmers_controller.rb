@@ -23,7 +23,7 @@ class ProgrammersController < ApplicationController
   end
 
   def show
-      @posts = Post.all
+      @posts = Post.where(:programmer_id => current_user.programmer.id)
       @programmer = Programmer.find_by(:user_id => current_user)
   end
 

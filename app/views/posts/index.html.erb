@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-6 ml-3 mt-3">
-			<h1>List of posts</h1>
+			<h1>Top Questions</h1>
 			<ol>
 				<% @post.each do |post| %>
 					<li><h2>
@@ -19,7 +19,6 @@
 					<br/>
 				<% end %>
 			</ol>
-      <%= link_to 'Create New Post', new_programmer_post_path(programmer_id: @programmer.id), :class => "btn btn-info"%>
 		</div>
 	</div>
 </div>

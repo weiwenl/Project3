@@ -1,19 +1,31 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-6 ml-3 mt-3">
-        <%= form_with model: @programmer, url: programmer_path(@programmer), method: "patch", local: true do |form| %>
-            <%= form.hidden_field :id, value:@programmer.id %>
-            <%= form.label :name %>
-            <%= form.text_field :name %>
+
+			<div class="row	mt-3">
+			<h3>Make changes to my profile</h3>
+
+					<%= form_with model: @programmer, url: programmer_path(@programmer), method: "patch", local: true do |form| %>
+							<%= form.hidden_field :id, value:@programmer.id %>
+
+	            <%= form.label :name %>
+	            <%= form.text_field :name %> <br>
 
 
-            <%= form.label :level %>
-            <%= form.select(:level, options_for_select([['Rookie', 'Rookie'], ['Expert', 'Expert']]), :include_blank => true) %>
+	            <%= form.label :level %>
+	            <%= form.select(:level, options_for_select([['Rookie', 'Rookie'], ['Expert', 'Expert']]), :include_blank => true) %><br>
 
-            <%= form.label :photo_url %>
-            <%= form.file_field :photo_url %>
-            <%= form.submit "Save" %>
-        <% end %>
+	            <%= form.label :photo_url %>
+	            <%= form.file_field :photo_url %><br>
+
+									<%= form.submit "Save" %>
+							
+	        <% end %>
+
+
+
+		</div>
+
     </div>
   </div>
 </div>

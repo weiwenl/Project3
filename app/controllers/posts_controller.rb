@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   def index
     @post = Post.all
     @programmer = Programmer.find(current_user.programmer.id)
+    @postFiltered = Post.where(programmer_id: current_user.programmer.id)
   end
 
   def show

@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def new
-
+    @programmer = Programmer.find(params[:programmer_id])
   end
 
   def edit

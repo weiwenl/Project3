@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   end
 
   resources :programmers do
-    resources :posts, :comments
+    resources :posts do
+      resources :comments
+    end
   end
 
   root to: "programmers#index"

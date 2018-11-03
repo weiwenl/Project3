@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id].to_i)
     @programmer = Programmer.find(params[:programmer_id].to_i)
     @comment.post_id = @post.id
-    @comment.programmer_id = @programmer.id
+    @comment.programmer_id = current_user.programmer.id
     if @comment.save
       redirect_to post_path(@comment.post_id)
     else

@@ -5,7 +5,7 @@
 			<ol>
 				<% @post.each do |post| %>
 					<li><h2>
-						<%= link_to post.post_title, programmer_post_path(@programmer.id,post.id)%></h2></li>
+						<%= link_to post.post_title, programmer_post_path(post.programmer.id,post.id)%></h2></li>
 					<p><%= post.content %></p>
 					<p class="name-footer"><%=link_to post.programmer.name, programmer_path(@programmer.id), :style =>"color: #222df7" %></p>
 					<%= link_to like_post_path(post, @programmer), method: :put do %>

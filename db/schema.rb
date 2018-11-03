@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_03_025020) do
+ActiveRecord::Schema.define(version: 2018_11_03_051238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,13 @@ ActiveRecord::Schema.define(version: 2018_11_03_025020) do
     t.datetime "updated_at", null: false
     t.bigint "programmer_id"
     t.string "post_title"
+    t.integer "cached_votes_total", default: 0
+    t.integer "cached_votes_score", default: 0
+    t.integer "cached_votes_up", default: 0
+    t.integer "cached_votes_down", default: 0
+    t.integer "cached_weighted_score", default: 0
+    t.integer "cached_weighted_total", default: 0
+    t.float "cached_weighted_average", default: 0.0
     t.index ["programmer_id"], name: "index_posts_on_programmer_id"
   end
 
@@ -70,6 +77,5 @@ ActiveRecord::Schema.define(version: 2018_11_03_025020) do
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
   end
 
-  add_foreign_key "comments", "programmers"
   add_foreign_key "programmers", "users"
 end

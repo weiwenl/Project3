@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @post = Post.all
+    @post = Post.all.order(:cached_votes_up => :desc)
     @programmer = Programmer.find(current_user.programmer.id)
 
     # @postFiltered = Post.where(programmer_id: current_user.programmer.id)

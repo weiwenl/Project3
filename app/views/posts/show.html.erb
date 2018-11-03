@@ -1,18 +1,16 @@
-<%= link_to 'Back', posts_path %>
-
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-6 ml-3 mt-3">
-			<h4>Post title: <strong><%= @post.post_title%></strong></h4><%= @programmer.name %><br/>
+			<h4>Post title: <strong><%= @post.post_title%></strong></h4><br/>
 			<%= @post.content %><br/>
 			<%=link_to @post.programmer.name, programmer_path(@post.programmer.id), :style =>"color: #ff82f4" %><br/>
 			<% if @post.programmer.id == current_user.id %>
-				<%= link_to 'Edit', edit_programmer_post_path(@programmer), :class => "btn btn-info"%>
-				<%= link_to 'Delete', programmer_post_path(@programmer), :class => "btn btn-info",
+				<%= link_to 'Edit', edit_programmer_post_path(@programmer), :class => "btn btn-outline-info btn-sm"%>
+				<%= link_to 'Delete', programmer_post_path(@programmer), :class => "btn btn-outline-info btn-sm",
 				      method: :delete,
 				      data: { confirm: 'Are you sure?' } %>
 			<% else %>
-				<%= link_to 'Back', posts_path %>
+				<%= link_to 'Back', posts_path, :class => "text-info" %>
 			<% end %>
 	<br>
 	<br>
@@ -44,7 +42,7 @@
 	 		<%= form.submit :class => "btn btn-info"%>
 		</p>
 	<% end %>
-
+	<%= link_to 'Back', posts_path, :class => "text-info" %>
 		</div>
 	</div>
 </div>

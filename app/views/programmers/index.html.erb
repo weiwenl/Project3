@@ -1,14 +1,24 @@
 <div class="jumbotron">
 			<div class="row	mt-3">
 					<div class="col-sm-9">
-						<h1 class="display-2">Hello, Monkeys!</h1>
-							<p class="lead">This web encapsulates the vision of connecting all programmers to share programming ideas and ask questions.</p>
 							<% if !user_signed_in? %>
+									<h1 class="display-2">Hello, Monkeys!</h1>
+										<p class="lead">This web encapsulates the vision of connecting all programmers to share programming ideas and ask questions.</p>
 									<p>All are welcome to discuss your ideas and marvel at the amazing ideas of other developers. Sign up now!</p>
 									<p>Already have an account? No Problem! Come and check out posts created by other developers</p>
+
 							<% elsif user_signed_in? && (current_user.programmer == nil) %>
+									<h1 class="display-2">Hello, Monkey!</h1>
+										<p class="lead">This web encapsulates the vision of connecting all programmers to share programming ideas and ask questions.</p>
 									<p>All are welcome to discuss your ideas and marvel at the amazing ideas of other developers. Start by creating your profile.</p>
+									<button class="btn-lg">
+										<%= link_to 'Create my profile', new_programmer_path %>
+									</button>
+
 							<% else %>
+									<h1 class="display-2">Hello, Monkey!</h1>
+										<p class="lead">This web encapsulates the vision of connecting all programmers to share programming ideas and ask questions.</p>
+										<p>Start a new post or view all existing posts.</p>
 									<button class="btn-lg">
 										<%= link_to 'Create a post', new_programmer_post_path(programmer_id: @programmer)%>
 									</button>

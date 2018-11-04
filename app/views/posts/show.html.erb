@@ -3,7 +3,7 @@
 		<div class="col-sm-6 ml-3 mt-3">
 			<h4>Post title: <strong><%= @post.post_title%></strong></h4><br/>
 			<%= @post.content %><br/>
-			<%=link_to @post.programmer.name, programmer_path(@post.programmer.id), :style =>"color: #ff82f4" %><br/>
+			<%=link_to @post.programmer.name, programmer_path(@post.programmer.id), :style =>"color: #222df7" %><br/>
 			<% if @post.programmer.id == current_user.id %>
 				<%= link_to 'Edit', edit_programmer_post_path(@programmer), :class => "btn btn-outline-info btn-sm"%>
 				<%= link_to 'Delete', programmer_post_path(@programmer), :class => "btn btn-outline-info btn-sm",
@@ -23,7 +23,7 @@
 		      method: :delete,
 		      data: { confirm: 'Are you sure?' } %>
 		<br>
-		    <%=link_to comment.programmer.name, programmer_path(@programmer.id), :style =>"color: #ff82f4" %><br/>
+		    <%=link_to comment.programmer.name, programmer_path(@programmer.id), :style =>"color: #222df7" %><br/>
 	    </p>
 	<% end %>
 

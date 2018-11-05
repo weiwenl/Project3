@@ -1,15 +1,15 @@
-<div class="container-fluid">
+<div class="container">
 	<div class="row">
 		<div class="col-sm-6 ml-3 mt-3">
 			<h1>Edit Post</h1>
 			<%= form_with model: @post, url: post_path, local: true do |form| %>
 				<p>
 						<%= form.label :post_title %><br/>
-						<%= form.text_field :post_title %>
+						<%= form.text_field :post_title, size: "100"%>
 				</p>
 				<p>
 						<%= form.label :content %><br/>
-						<%= form.text_area :content %>
+						<%= form.text_area :content, cols: "100", rows: "10" %>
 				</p>
 				<p>
 					<br/>

@@ -1,16 +1,16 @@
-<div class="container-fluid">
+<div class="container">
 	<div class="row">
 		<div class="col-sm-6 ml-3 mt-3">
 			<h1> Create new post</h1>
 			<%= form_with scope: :post, url: programmer_posts_path(@programmer), local: true do |form| %>
 				<p>
 					<%= form.label :post_title %><br>
-					<%= form.text_field :post_title %>
+					<%= form.text_field :post_title, size: "100" %>
 				</p>
 
 				<p>
 					<%= form.label :content %><br>
-					<%= form.text_area :content %>
+					<%= form.text_area :content, cols: "100", rows: "10"%>
 				</p>
 				<p>
 					<%= form.hidden_field :programmer_id, value:@programmer.id %>
